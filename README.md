@@ -38,31 +38,31 @@ def recorrer_laberinto(laberinto):
   movimientos = []
 # Mientras no se encuentra la salida se sigue explorando el recorrido del laberinto
   while laberinto[fila][columna] != "S" and laberinto[fila][columna] != "X":
-    # comprobamos si podemos movernos hacia abajo.
+# comprobamos si podemos movernos hacia abajo.
     if fila +1 < len(laberinto):
       if laberinto[fila +1][columna] == "":
         fila += 1
         movimientos.append("Abajo")
         continue
-    # comprobamos si podemos movernos hacia la derecha.
+# comprobamos si podemos movernos hacia la derecha.
     if columna +1 < len(laberinto[0]):
       if laberinto[fila][columna + 1] == "":
         columna += 1
         movimientos.append("Derecha")
         continue
-    # comprobamos si podemos movernos hacia arriba.
+# comprobamos si podemos movernos hacia arriba.
     if fila -1 >= 0:
       if laberinto[fila -1 ][columna] == "":
         fila -= 1
         movimientos.append("Arriba")
         continue
-    # comprobamos si podemos movernos hacia la izquierda.
+# comprobamos si podemos movernos hacia la izquierda.
     if columna -1 >= 0: 
       if laberinto[fila][columna -1] == "":
         columna -= 1
         movimientos.append("Izquierda")
         continue
-    # en el caso de que no podamos movernos significará quenos hemos quedado atascados por lo que devolveremos una lista vacía.
+# en el caso de que no podamos movernos significará quenos hemos quedado atascados por lo que devolveremos una lista vacía.
     return []
   return movimientos
 if __name__== "__main__":
